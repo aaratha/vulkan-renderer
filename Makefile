@@ -19,7 +19,7 @@ LDFLAGS = $(LIBDIRS) `pkg-config --static --libs glfw3` -lvulkan \
           -Wl,-rpath,$(VULKAN_SDK)/lib
 
 # Source files
-SRCS = main.cpp
+SRCS = *.cpp
 
 # Output executable
 TARGET = a.out
