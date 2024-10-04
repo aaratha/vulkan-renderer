@@ -2,6 +2,7 @@
 
 #include "lve_window.h"
 #include "lve_pipeline.h"
+#include "lve_device.h"
 
 namespace lve{
     class FirstApp {
@@ -16,6 +17,12 @@ namespace lve{
         private:
 
           LveWindow lveWindow{WIDTH, HEIGHT, "Hellow Vulkan!"};
-        LvePipeline lvePipeline{"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv"};
+          LveDevice lveDevice{lveWindow};
+          LvePipeline lvePipeline{
+              lveDevice,
+              "shaders/simple_shader.vert.spv",
+              "shaders/simple_shader.frag.spv",
+              LvePipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT)
+          };
     };
 }
